@@ -1,43 +1,36 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class Result2;
-class Result1
-{
-    public:
-    int marks;
-    void getData()
-    {
-        cout<<"Enter marks for subject:";
-        cin>>marks;
-    }
-    int data()
-    {
-        return marks;
+
+class num {
+public:
+    int n1, n2;
+
+    void accept() {
+        cout << "Enter first number: ";
+        cin >> n1;
+        cout << "Enter second number: ";
+        cin >> n2;
     }
 
-};
-class Result2
-{
-    public:
-    int marks;
-    void accept()
-    {
-        cout<<"Enter marks for subject:";
-        cin>>marks;
+    void display() {
+        cout << "Num 1: " << n1 << endl;
+        cout << "Num 2: " << n2 << endl;
     }
-    int data()
-    {
-        return marks;
+
+    void swap(num &obj) {
+        int temp = obj.n1;
+        obj.n1 = obj.n2;
+        obj.n2 = temp;
+        cout << "Swapped:-" << endl;
+        cout << "First number: " << obj.n1 << endl;
+        cout << "Second number: " << obj.n2 << endl;
     }
 };
 
-int main()
-{
-    Result1 obj1;
-    Result2 obj2;
-    obj1.getData();
-    obj2.accept();
-    float avg= (obj1.data()+obj2.data())/2.0;
-    cout<<"Average marks: "<<avg;
+int main() {
+    num nu;
+    nu.accept();
+    nu.display();
+    nu.swap(nu);
     return 0;
 }
